@@ -318,6 +318,12 @@ int	t_memcmp()
 
 }
 
+
+int	test_memalloc()
+{
+	
+}
+
 void	print_test(int r)
 {
 	if (r != 0)
