@@ -354,11 +354,13 @@ int	t_ft_strdup()
 	return (0);
 }
 
-
 void	print_test(int r)
 {
 	if (r != 0)
+	{
 		printf(RED "FAIL %d\n" RESET, r);
+		getchar();
+	}
 	else
 		printf(GREEN "SUCCESS\n" RESET);
 }
@@ -423,7 +425,9 @@ int	main()
 	print_test(t_ft_substr());
 	printf(SINGLELINE CYAN "ft_strjoin()" RESET SINGLELINE "\n");
 	print_test(t_ft_strjoin());
-	
+	printf(SINGLELINE CYAN "ft_strtrim" RESET SINGLELINE "\n");
+	print_test(t_ft_strtrim());
+		
 
 
 	printf(SINGLELINE CYAN "ft_lstnew()" RESET SINGLELINE "\n");

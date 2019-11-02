@@ -1,22 +1,40 @@
 #include "libft.h"
+#include <stdio.h>
 
+int	find(char s, const char *set)
+{	
+	int	i;
 
-char *ft_strtrim(char const *s1, char const *set)
+	i = 0;
+	while (set[i] != 0)
+	{
+		if (set[i] == s)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char 	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*ret;
-	char	*s;
+	size_t	i;
+	size_t	start;
 	size_t	len;
+	char *ret;
 
-	len = ft_strlen(s1);
-	if (!(ret = (char *) malloc((len + 1) * sizeof(char))))
-		return (NULL);
-	while (ft_strnstr(set, s1, 1))
-		s1++;
-	s = ret;
-	while (*s1 != 0)
-		*s++ = *s1++;
- 	*s = 0;
-	while (ft_strnstr(set,--s, 1))
-		*s = 0;
+	i= 0;
+	while (find(s1[i], set) == 1)
+		i++;
+	start = i;
+	while (s1[i] != 0)
+		i++;
+	i--;
+	while (find(s1[i], set) == 1)
+		i--;
+	len = i - start + 1;
+	printf("%zu %zu %zu \n", start, i , len);
+	printf("%s\n", s1);
+	ret = ft_substr(s1, start, len);
+	printf("%s\n", ret);
 	return (ret);
 }

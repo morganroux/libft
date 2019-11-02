@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include <ctype.h>
 #include <stdarg.h>
@@ -35,6 +36,7 @@ int		t_ft_lstiter();
 int		t_ft_lstmap();
 int		t_ft_substr();
 int		t_ft_strjoin();
+int		t_ft_strtrim();
 void		t_ft_putnbr_fd();
 
 #endif
