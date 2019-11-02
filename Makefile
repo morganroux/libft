@@ -71,6 +71,7 @@ T_SRCS		=	./tests/t_main.c \
 			./tests/t_ft_strtrim.c \
 			./tests/t_ft_split.c \
 			./tests/t_ft_itoa.c \
+			./tests/t_ft_strmapi.c \
 			./tests/t_ft_lstnew.c \
 			./tests/t_ft_lstadd_front.c \
 			./tests/t_ft_lstsize.c \

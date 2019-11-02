@@ -39,6 +39,7 @@ int		t_ft_strjoin();
 int		t_ft_strtrim();
 int		t_ft_split();
 int		t_ft_itoa();
+int		t_ft_strmapi();
 void		t_ft_putnbr_fd();
 
 #endif

@@ -367,6 +367,9 @@ void	print_test(int r)
 
 int	main()
 {
+	printf(LONGLINE CYAN "\nFonctions de base\n" RESET LONGLINE"\n");
+
+
 	printf(SINGLELINE CYAN "ft_memset()" RESET SINGLELINE "\n");
 	print_test(t_memset());
 	printf(SINGLELINE CYAN "ft_bzero()" RESET SINGLELINE "\n");
@@ -418,8 +421,9 @@ int	main()
 	printf(SINGLELINE CYAN "ft_calloc()" RESET SINGLELINE "\n");
 	print_test(t_ft_calloc());
 
-	printf(LONGLINE CYAN "\nFonctions de base "\
-		GREEN "OK\n" RESET LONGLINE"\n");
+
+	printf(LONGLINE CYAN "\nFonctions complémentaires\n" RESET LONGLINE"\n");
+
 
 	printf(SINGLELINE CYAN "ft_substr()" RESET SINGLELINE "\n");
 	print_test(t_ft_substr());
@@ -431,7 +435,10 @@ int	main()
 	print_test(t_ft_split());
 	printf(SINGLELINE CYAN "ft_itoa" RESET SINGLELINE "\n");
 	print_test(t_ft_itoa());
-	
+	printf(SINGLELINE CYAN "ft_strmapi" RESET SINGLELINE "\n");
+	print_test(t_ft_strmapi());
+
+	printf(LONGLINE CYAN "\nFonctions de listes\n" RESET LONGLINE"\n");
 
 
 	printf(SINGLELINE CYAN "ft_lstnew()" RESET SINGLELINE "\n");
@@ -453,9 +460,10 @@ int	main()
 	printf(SINGLELINE CYAN "ft_lstmap()" RESET SINGLELINE "\n");
 	print_test(t_ft_lstmap());
 
-	printf(LONGLINE CYAN "\nFonctions de listes "\
-		GREEN "OK\n" RESET LONGLINE"\n");
 
+	printf(LONGLINE CYAN "\nFonctions d'affichage\n" RESET LONGLINE"\n");
+	
+	
 	printf(SINGLELINE CYAN "ft_putchar_fd()" RESET SINGLELINE "\n");
 	ft_putchar_fd('O', 1);
 	ft_putchar_fd('K', 1);
