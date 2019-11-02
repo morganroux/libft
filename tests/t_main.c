@@ -429,6 +429,8 @@ int	main()
 	print_test(t_ft_strtrim());
 	printf(SINGLELINE CYAN "ft_split" RESET SINGLELINE "\n");
 	print_test(t_ft_split());
+	printf(SINGLELINE CYAN "ft_itoa" RESET SINGLELINE "\n");
+	print_test(t_ft_itoa());
 	
 
 

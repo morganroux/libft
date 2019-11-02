@@ -10,12 +10,12 @@ char	*ft_itoa(int n)
 	nbr = (unsigned int) (n < 0) ? -n : n;
 	len = (n < 0) ? 2 : 1;
 	while ((nbr = nbr / 10) > 0)
-		len ++;
+		len++;
 	if (!(ret = (char *) malloc((len + 1) * sizeof(char))))
 		return (NULL);
 	nbr = (unsigned int) (n < 0) ? -n : n;
 	ret[len--] = 0;
-	ret[len--] = base[n % 10];
+	ret[len--] = base[nbr % 10];
 	while ((nbr = nbr / 10) > 0)
 		ret[len--] = base[nbr % 10];
 	if (n < 0)
