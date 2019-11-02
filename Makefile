@@ -20,12 +20,12 @@ SRCS		=	./srcs/ft_memset.c \
 			./srcs/ft_strdup.c \
 			./srcs/ft_strchr.c \
 			./srcs/ft_strrchr.c \
+			./srcs/ft_strcmp.c \
 			./srcs/ft_strncmp.c \
 			./srcs/ft_strlcat.c \
 			./srcs/ft_strlcpy.c \
 			./srcs/ft_strnstr.c \
 			./srcs/ft_atoi.c \
-			./srcs/ft_memalloc.c \
 			./srcs/ft_substr.c \
 			./srcs/ft_strjoin.c \
 			./srcs/ft_strtrim.c \
@@ -34,6 +34,8 @@ SRCS		=	./srcs/ft_memset.c \
 			./srcs/ft_strmapi.c \
 			./srcs/ft_putchar_fd.c \
 			./srcs/ft_putstr_fd.c \
+			./srcs/ft_putendl_fd.c \
+			./srcs/ft_putnbr_fd.c \
 			./srcs/ft_calloc.c \
 			./srcs/bonus/ft_lstnew.c \
 			./srcs/bonus/ft_lstadd_front.c \
@@ -43,7 +45,8 @@ SRCS		=	./srcs/ft_memset.c \
 			./srcs/bonus/ft_lstdelone.c \
 			./srcs/bonus/ft_lstclear.c \
 			./srcs/bonus/ft_lstiter.c \
-			./srcs/bonus/ft_lstmap.c
+			./srcs/bonus/ft_lstmap.c \
+			./srcs/utils/utils_list.c
 
 OBJS		=	${SRCS:.c=.o}
 
@@ -53,7 +56,28 @@ INC_PATH	=	-I./includes/
 
 LIB_PATH	=	-L. -lft
 
-T_SRCS		=	./tests/t_main.c
+T_SRCS		=	./tests/t_main.c \
+			./tests/generators.c \
+			./tests/hexdump.c \
+			./tests/t_is_function.c \
+			./tests/t_ft_strchr.c \
+			./tests/t_ft_strcmp.c \
+			./tests/t_ft_strcpycat.c \
+			./tests/t_ft_strnstr.c \
+			./tests/t_ft_atoi.c \
+			./tests/t_ft_calloc.c \
+			./tests/t_ft_substr.c \
+			./tests/t_ft_strjoin.c \
+			./tests/t_ft_lstnew.c \
+			./tests/t_ft_lstadd_front.c \
+			./tests/t_ft_lstsize.c \
+			./tests/t_ft_lstlast.c \
+			./tests/t_ft_lstadd_back.c \
+			./tests/t_ft_lstdelone.c \
+			./tests/t_ft_lstclear.c \
+			./tests/t_ft_lstiter.c \
+			./tests/t_ft_lstmap.c \
+			./tests/t_ft_putnbr_fd.c
 
 CC		=	gcc
 

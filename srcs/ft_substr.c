@@ -3,11 +3,13 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*sub;
-	size_t		l;
+	size_t		lmax;
 	size_t		n_copy;
+	size_t		i;
 
-	l = strlen(s);
-	if (start >= l)
+	i = 0;
+	lmax = strlen(s);
+	if (start >= lmax)
 	{
 		if(!(sub = (char *) malloc(1 * sizeof(char))))
 			return (NULL);
@@ -15,14 +17,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (sub);
 	}
 
-	if (start + l < len)
-		n_copy = start + l;
-	else
+	if (start + len < lmax)
 		n_copy = len;
+	else
+		n_copy = lmax - start;
 	if (!(sub = (char *) malloc((n_copy + 1) * sizeof(char))))
 		return (NULL);
-	while (n_copy-- > 0)
-		*sub++ = *(s++ + start);
-	*sub = 0;
+	while (i < n_copy)
+		sub[i++] = *(s++ + start);
+	sub[i] = 0;
 	return (sub);
 }

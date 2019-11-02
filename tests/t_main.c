@@ -1,4 +1,3 @@
-#include "libft.h"
 #include "t_libft.h"
 
 int	t_memset()
@@ -318,11 +317,43 @@ int	t_memcmp()
 
 }
 
-
-int	test_memalloc()
+int	t_strlen()
 {
-	
+	char *s;
+
+	s = malloc(1);
+	*s = 0;
+	printf("%lu - %lu\n", ft_strlen(s), strlen(s));
+	if (ft_strlen(s) != strlen(s))
+		return (1);
+	s = malloc(2);
+	strlcpy(s, "A", 2);
+	printf("%lu - %lu\n", ft_strlen(s), strlen(s));
+	if (ft_strlen(s) != strlen(s))
+		return (2);
+	s = malloc(2);
+	strlcpy(s, "", 2);
+	printf("%lu - %lu\n", ft_strlen(s), strlen(s));
+	if (ft_strlen(s) != strlen(s))
+		return (3);
+	s = malloc(200);
+	strlcpy(s, "Morgan", 200);
+	printf("%lu - %lu\n", ft_strlen(s), strlen(s));
+	if (ft_strlen(s) != strlen(s))
+		return (4);
+	return (0);
 }
+
+
+int	t_ft_strdup()
+{
+	if (strcmp(ft_strdup(""), "") != 0)
+		return (1);
+	if (strcmp(ft_strdup("abcde"), "abcde") != 0)
+		return (1);
+	return (0);
+}
+
 
 void	print_test(int r)
 {
@@ -334,20 +365,100 @@ void	print_test(int r)
 
 int	main()
 {
-	printf(DOUBLELINE CYAN "ft_memset()" RESET DOUBLELINE "\n");
+	printf(SINGLELINE CYAN "ft_memset()" RESET SINGLELINE "\n");
 	print_test(t_memset());
-	printf(DOUBLELINE CYAN "ft_bzero()" RESET DOUBLELINE "\n");
+	printf(SINGLELINE CYAN "ft_bzero()" RESET SINGLELINE "\n");
 	print_test(t_bzero());
-	printf(DOUBLELINE CYAN "ft_memcpy()" RESET DOUBLELINE "\n");
+	printf(SINGLELINE CYAN "ft_memcpy()" RESET SINGLELINE "\n");
 	print_test(t_memcpy());
-	printf(DOUBLELINE CYAN "ft_memccpy()" RESET DOUBLELINE "\n");
+	printf(SINGLELINE CYAN "ft_memccpy()" RESET SINGLELINE "\n");
 	print_test(t_memccpy());
-	printf(DOUBLELINE CYAN "ft_memmove()" RESET DOUBLELINE "\n");
+	printf(SINGLELINE CYAN "ft_memmove()" RESET SINGLELINE "\n");
 	print_test(t_memmove());
-	printf(DOUBLELINE CYAN "ft_memchr()" RESET DOUBLELINE "\n");
+	printf(SINGLELINE CYAN "ft_memchr()" RESET SINGLELINE "\n");
 	print_test(t_memchr());
-	printf(DOUBLELINE CYAN "ft_memcmp()" RESET DOUBLELINE "\n");
+	printf(SINGLELINE CYAN "ft_memcmp()" RESET SINGLELINE "\n");
 	print_test(t_memcmp());
+	printf(SINGLELINE CYAN "ft_strlen()" RESET SINGLELINE "\n");
+	print_test(t_strlen());
+	printf(SINGLELINE CYAN "ft_isalpha()" RESET SINGLELINE "\n");
+	print_test(t_is_function(&ft_isalpha, &isalpha));
+	printf(SINGLELINE CYAN "ft_isdigit()" RESET SINGLELINE "\n");
+	print_test(t_is_function(&ft_isdigit, &isdigit));
+	printf(SINGLELINE CYAN "ft_isalnum()" RESET SINGLELINE "\n");
+	print_test(t_is_function(&ft_isalnum, &isalnum));
+	printf(SINGLELINE CYAN "ft_isascii()" RESET SINGLELINE "\n");
+	print_test(t_is_function(&ft_isascii, &isascii));
+	printf(SINGLELINE CYAN "ft_isprint()" RESET SINGLELINE "\n");
+	print_test(t_is_function(&ft_isprint, &isprint));
+	printf(SINGLELINE CYAN "ft_toupper()" RESET SINGLELINE "\n");
+	print_test(t_is_function(&ft_toupper, &toupper));
+	printf(SINGLELINE CYAN "ft_tolower()" RESET SINGLELINE "\n");
+	print_test(t_is_function(&ft_tolower, &tolower));
+	printf(SINGLELINE CYAN "ft_strchr()" RESET SINGLELINE "\n");
+	print_test(t_ft_strchr(&ft_strchr, strchr));
+	printf(SINGLELINE CYAN "ft_strrchr()" RESET SINGLELINE "\n");
+	print_test(t_ft_strchr(&ft_strrchr, &strrchr));
+	printf(SINGLELINE CYAN "ft_strcmp()" RESET SINGLELINE "\n");
+	print_test(t_ft_strcmp());
+	printf(SINGLELINE CYAN "ft_strncmp()" RESET SINGLELINE "\n");
+	print_test(t_ft_strncmp());
+	printf(SINGLELINE CYAN "ft_strlcpy()" RESET SINGLELINE "\n");
+	print_test(t_ft_str_cpycat(&ft_strlcpy, &strlcpy));
+	printf(SINGLELINE CYAN "ft_strlcat()" RESET SINGLELINE "\n");
+	print_test(t_ft_str_cpycat(&ft_strlcat, strlcat));
+	printf(SINGLELINE CYAN "ft_strnstr()" RESET SINGLELINE "\n");
+	print_test(t_ft_strnstr());	
+	printf(SINGLELINE CYAN "ft_atoi()" RESET SINGLELINE "\n");
+	print_test(t_ft_atoi());
+	printf(SINGLELINE CYAN "ft_strdup()" RESET SINGLELINE "\n");
+	print_test(t_ft_strdup());
+	printf(SINGLELINE CYAN "ft_calloc()" RESET SINGLELINE "\n");
+	print_test(t_ft_calloc());
+
+	printf(LONGLINE CYAN "\nFonctions de base "\
+		GREEN "OK\n" RESET LONGLINE"\n");
+
+	printf(SINGLELINE CYAN "ft_substr()" RESET SINGLELINE "\n");
+	print_test(t_ft_substr());
+	printf(SINGLELINE CYAN "ft_strjoin()" RESET SINGLELINE "\n");
+	print_test(t_ft_strjoin());
+	
+
+
+	printf(SINGLELINE CYAN "ft_lstnew()" RESET SINGLELINE "\n");
+	print_test(t_ft_lstnew());
+	printf(SINGLELINE CYAN "ft_lstadd_front()" RESET SINGLELINE "\n");
+	print_test(t_ft_lstadd_front());
+	printf(SINGLELINE CYAN "ft_lstsize()" RESET SINGLELINE "\n");
+	print_test(t_ft_lstsize());
+	printf(SINGLELINE CYAN "ft_lstlast()" RESET SINGLELINE "\n");
+	print_test(t_ft_lstlast());
+	printf(SINGLELINE CYAN "ft_lstadd_back()" RESET SINGLELINE "\n");
+	print_test(t_ft_lstadd_back());
+	printf(SINGLELINE CYAN "ft_lstdelone()" RESET SINGLELINE "\n");
+	print_test(t_ft_lstdelone());
+	printf(SINGLELINE CYAN "ft_lstclear()" RESET SINGLELINE "\n");
+	print_test(t_ft_lstclear());
+	printf(SINGLELINE CYAN "ft_lstiter()" RESET SINGLELINE "\n");
+	print_test(t_ft_lstiter());
+	printf(SINGLELINE CYAN "ft_lstmap()" RESET SINGLELINE "\n");
+	print_test(t_ft_lstmap());
+
+	printf(LONGLINE CYAN "\nFonctions de listes "\
+		GREEN "OK\n" RESET LONGLINE"\n");
+
+	printf(SINGLELINE CYAN "ft_putchar_fd()" RESET SINGLELINE "\n");
+	ft_putchar_fd('O', 1);
+	ft_putchar_fd('K', 1);
+	ft_putchar_fd('\n', 1);
+	printf(SINGLELINE CYAN "ft_putstr_fd()" RESET SINGLELINE "\n");
+	ft_putstr_fd("SUCCESS\n", 1);
+	printf(SINGLELINE CYAN "ft_putendl_fd()" RESET SINGLELINE "\n");
+	ft_putendl_fd("SUCCESS", 1);
+	printf(SINGLELINE CYAN "ft_putnbr_fd()" RESET SINGLELINE "\n");
+	t_ft_putnbr_fd();
+
 
 	return (0);
 }

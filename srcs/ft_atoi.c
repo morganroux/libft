@@ -24,7 +24,7 @@ int				is_base(char *base, char c)
 	return (0);
 }
 
-int				ft_atoi(char *str)
+int				ft_atoi(char const *str)
 {
 	int	total;
 	int	signe;
