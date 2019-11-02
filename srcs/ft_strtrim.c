@@ -20,7 +20,6 @@ char 	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	start;
 	size_t	len;
-	char *ret;
 
 	i= 0;
 	while (find(s1[i], set) == 1)
@@ -32,9 +31,5 @@ char 	*ft_strtrim(char const *s1, char const *set)
 	while (find(s1[i], set) == 1)
 		i--;
 	len = i - start + 1;
-	printf("%zu %zu %zu \n", start, i , len);
-	printf("%s\n", s1);
-	ret = ft_substr(s1, start, len);
-	printf("%s\n", ret);
-	return (ret);
+	return (ft_substr(s1, start, len));
 }
