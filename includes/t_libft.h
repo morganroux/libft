@@ -37,6 +37,7 @@ int		t_ft_lstmap();
 int		t_ft_substr();
 int		t_ft_strjoin();
 int		t_ft_strtrim();
+int		t_ft_split();
 void		t_ft_putnbr_fd();
 
 #endif
