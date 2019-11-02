@@ -59,6 +59,15 @@ LIB_PATH	=	-L. -lft
 T_SRCS		=	./tests/t_main.c \
 			./tests/generators.c \
 			./tests/hexdump.c \
+			./tests/t_ft_memset.c \
+			./tests/t_ft_bzero.c \
+			./tests/t_ft_memcpy.c \
+			./tests/t_ft_memccpy.c \
+			./tests/t_ft_memmove.c \
+			./tests/t_ft_memchr.c \
+			./tests/t_ft_memcmp.c \
+			./tests/t_ft_strlen.c \
+			./tests/t_ft_strdup.c \
 			./tests/t_is_function.c \
 			./tests/t_ft_strchr.c \
 			./tests/t_ft_strcmp.c \
