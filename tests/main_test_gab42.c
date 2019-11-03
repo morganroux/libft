@@ -353,7 +353,7 @@ int	test_memchr(void)
 	memcpy(s2, "123456789", n);
 	memcpy(s1, ft_memchr(s1, 0, n), n);
 	memcpy(s2, memchr(s2, 0, n), n);
-	if (memcmp(s1, s2, 12))
+	if (memcmp(s1, s2, 1) != 0)
 		return (6);
 	free(s1);
 	free(s2);

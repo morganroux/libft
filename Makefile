@@ -1,6 +1,8 @@
-NAME	=	libft.a
+NAME		=	libft.a
 
-T_NAME	=	test_libft
+T_NAME		=	test_libft
+
+GAB_NAME	=	test_libft_gaby
 
 SRCS		=	./srcs/ft_memset.c \
 			./srcs/ft_bzero.c \
@@ -56,6 +58,8 @@ INC_PATH	=	-I./includes/
 
 LIB_PATH	=	-L. -lft
 
+T_GAB		=	./tests/main_test_gab42.c
+
 T_SRCS		=	./tests/t_main.c \
 			./tests/generators.c \
 			./tests/hexdump.c \
@@ -110,10 +114,15 @@ clean:
 fclean:			clean
 			rm -f ${NAME}
 
+cleanall:		fclean
+			rm -f ${T_NAME} ${GAB_NAME}
+
 re:			fclean all
 
 test:			${NAME}	
 			${CC} ${FLAGS} ${T_SRCS} ${INC_PATH} ${LIB_PATH} -o ${T_NAME}
 			./test_libft
-		
 
+testgaby:		${NAME}	
+			${CC} ${FLAGS} ${T_GAB} ${INC_PATH} ${LIB_PATH} -o ${GAB_NAME}
+			./test_libft_gaby
