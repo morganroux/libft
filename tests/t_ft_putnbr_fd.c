@@ -17,4 +17,11 @@ void	t_ft_putnbr_fd()
 	ft_putnbr_fd(i, 1);
 	printf(" - %d\n", i);
 
+	i = 2147483647;
+	ft_putnbr_fd(i, 1);
+	printf(" - %d\n", i);
+ 	i= -2147483648;
+	ft_putnbr_fd(i, 1);
+	printf(" - %d\n", i);
+
 }
